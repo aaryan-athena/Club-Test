@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { AuthControls } from "@/components/auth-controls";
 import { BrandMark } from "@/components/brand-mark";
 import { ChevronDownIcon, CloseIcon, MenuIcon } from "@/components/icons";
 
@@ -49,12 +50,12 @@ export function SiteHeader() {
           onClick={() => setMenuOpen(false)}
         >
           <BrandMark className="h-8 w-8 shrink-0" />
-          <span className="truncate text-sm font-bold tracking-tight sm:text-base">
+          <span className="truncate text-sm font-bold tracking-tight sm:text-base min-[1180px]:sr-only">
             WWP South Math Club Resources
           </span>
         </Link>
 
-        <nav aria-label="Primary navigation" className="hidden min-[1180px]:flex min-[1180px]:items-center min-[1180px]:gap-4">
+        <nav aria-label="Primary navigation" className="hidden min-[1180px]:flex min-[1180px]:items-center min-[1180px]:gap-3 min-[1380px]:gap-4">
           {primaryLinks.map((link) => (
             <Link key={link.href} href={link.href} className={desktopLinkClass(link.href)}>
               {link.label}
@@ -89,6 +90,10 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+
+        <div className="hidden shrink-0 min-[1180px]:block">
+          <AuthControls layout="bar" />
+        </div>
 
         <button
           type="button"
@@ -146,6 +151,9 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
+            <div className="mt-3 border-t border-slate-200 pt-4">
+              <AuthControls layout="menu" onNavigate={() => setMenuOpen(false)} />
+            </div>
           </div>
         </nav>
       )}

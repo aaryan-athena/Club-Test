@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { logoutAction } from "@/app/admin/login/actions";
+import { logoutAction } from "@/app/auth/actions";
 import { BrandMark } from "@/components/brand-mark";
-import { requireAdmin } from "@/lib/auth/admin";
+import { requireAdmin } from "@/lib/auth/session";
 
 export const dynamic = "force-dynamic";
 
