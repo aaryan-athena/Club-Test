@@ -1,0 +1,10 @@
+
+> math-website@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.200.6:3001
+- Environments: .env.local
+✓ Ready in 1362ms
+[?25h
